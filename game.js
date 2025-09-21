@@ -18,9 +18,9 @@ const bird = {
     y: canvas.height / 2,
     width: 30,
     height: 24,
-    gravity: 0.5,
+    gravity: 0.02,  // Reduced gravity by 70%
     velocity: 0,
-    jump: -8
+    jump: -2.5    // Adjusted jump strength to match new gravity
 };
 
 // Pipe properties
