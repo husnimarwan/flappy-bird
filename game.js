@@ -9,6 +9,7 @@ canvas.height = 600;
 
 // Game variables
 let score = 0;
+let highScore = 0;
 let gameStarted = false;
 let gameOver = false;
 
@@ -126,8 +127,12 @@ function gameLoop() {
     // Check for collisions with pipes or canvas bounds
     if (checkCollision() || bird.y < 0 || bird.y + bird.height > canvas.height) {
         gameOver = true;
+        // Update high score if current score is higher
+        if (score > highScore) {
+            highScore = score;
+        }
         message.style.display = 'block';
-        message.textContent = 'Game Over! Press Space to Restart';
+        message.textContent = `Game Over! Score: ${Math.floor(score)} | High Score: ${Math.floor(highScore)}\nPress Space to Restart`;
         return;
     }
 
@@ -145,7 +150,7 @@ document.addEventListener('keydown', event => {
             message.style.display = 'none';
             gameLoop();
         } else if (gameOver) {
-            // Reset game
+            // Reset game but keep high score
             gameOver = false;
             gameStarted = false;
             bird.y = canvas.height / 2;
