@@ -20,14 +20,14 @@ const bird = {
     height: 24,
     gravity: 0.02,  // Reduced gravity by 70%
     velocity: 0,
-    jump: -2.5    // Adjusted jump strength to match new gravity
+    jump: -2    // Adjusted jump strength to match new gravity
 };
 
 // Pipe properties
 const pipeWidth = 50;
 const pipeGap = 150;
 let pipes = [];
-const pipeSpeed = 2;
+const pipeSpeed = 1;  // Reduced speed by 50%
 
 // Colors
 const birdColor = '#FFD700';
