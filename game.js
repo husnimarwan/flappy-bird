@@ -132,7 +132,7 @@ function gameLoop() {
             highScore = score;
         }
         message.style.display = 'block';
-        message.textContent = `Game Over! Score: ${Math.floor(score)} | High Score: ${Math.floor(highScore)}\nPress Space to Restart`;
+        message.textContent = `Game Over!\nScore: ${Math.floor(score)}\nHigh Score: ${Math.floor(highScore)}\n\nPress Space to Restart`;
         return;
     }
 
